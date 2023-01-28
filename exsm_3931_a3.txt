@@ -1,0 +1,165 @@
+
+
+
+#for simplicity this machine only takes quarters, nickles, and dimes.  
+
+#Machine owner pseudocode
+
+vending_machine_inventory_slots = {chips: 10, gum: 10, chocolate_bars 10}
+refill_inventory = {rchips: 25, rgum: 20, rchocolate_bars 20}
+
+#coin slots are for giving change
+
+vending_machine_coin_slots = {quarters: 20, dimes :20, nickles: 20}
+coin_refill_inventory = {rq: 50, rd: 50, rn: 50}
+vending_machine_lock {open, closed}
+
+Look at Vending Machine lock
+
+if vending_marchine_lock == closed {
+	use key to open door
+}
+
+		else {
+	open vending machine door
+}
+
+Open vending_machine_money_collection_bin
+If vending_machine_money_collection_bin is empty {
+	close bin
+}
+	else {
+	remove money from bin, then close
+}
+
+
+Look at vending_machine_inventory_slot "chips"
+If refill_inventory "rchips" = 0 {
+	then goto slot "gum"
+	else
+while vending_machine_invetory_slot chips empty is greater than 0 {
+	insert rchips into open slot
+
+rchips = rchips -1
+#this reduces the invetory of refill chips by 1 each iteration
+}
+
+
+
+look at vending_machine_inventory_slot "gum"
+If refill_inventory "rgum" = 0 {
+	then goto slot "chocolate_bars"
+}	else
+while vending_machine_inventory_slot "gum" empty is greater than 0 {
+	insert rgum into open slot
+
+rgum = rgum -1
+}
+
+look at vending_machine_inventory_slot "chocolate_bars"
+If refill_inventory "rchocolate_bars" = 0  {
+	then goto vending_machine_coin_slots
+}	else
+
+while vending_machine_inventory_slot "chocolate_bars empty is greater than 0 {
+	insert rchocolate_bar into empty slot
+
+rchocolate_bars = rchocolate_bars -1
+}
+
+
+Look at vending_machine_coin_slot "quarters"
+If coin_refill_inventory "rq" = 0 {
+	then goto slot "dimes"
+}
+	else
+while vending_machine_coin_slot "quarters" < 20 {
+	insert "rq" into coin slot
+
+rq = rq -1
+#this reduces the number of refill quarters in inventory
+}
+
+Look at vending_machine_coin_slot "dimes"
+If coin_refill_inventory "rd" = 0 {
+	then goto slot "nickles"
+}
+	else
+while vending_machine_coin_slot "dimes" < 20 {
+	insert "rd" into coin slot
+
+rd = rd -1
+}
+
+Look at vending_machine_coin_slot "nickles"
+If coin_refill_inventory "rn" = 0 {
+	then close coin slots"
+}
+	else
+while vending_machine_coin_slot "nickels" < 20 {
+	insert "rn" into coin slot
+
+rn = rn -1
+}
+
+
+Close vending machine
+Lock vending machine
+
+
+
+
+
+
+
+
+
+#psudocode in view of hungry customer.  
+#for this example the user wants to use his larger denomitation first
+
+Money = {quarters: 6, dimes: 4, nickels: 2}
+Money_value = 2.00
+Vending_machine_content = {chips: 2.00, gum: 1.50, chocolate_bars: 1.75}
+vending_machine_inventory = {chips: 5, gum: 3, chocolate_bars: 5}
+
+Look at choices and price
+select choice
+
+if vending machine gives error message {
+	choose new option 
+}
+
+	insert money
+quarters = quarters -1
+dimes = dimes -1
+nickels = nickels -1
+
+while quarters > 1
+	use quarters
+else
+	use dimes
+while dimes > 1 and quarters = 0
+	use dimes
+else 	
+	use nickels
+while nickels > 1 and dimes = 0
+	use nickels
+
+while money is less than cost {
+	insert more money
+}
+
+press vending button
+retreive vending_machine_content
+
+check change slot for change
+
+update money_value
+update money
+
+
+
+
+
+
+
